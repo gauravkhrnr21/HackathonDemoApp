@@ -59,4 +59,7 @@ export class MainComponent implements OnInit {
     }
   }
 
+  goToDashboard(interest:string){
+    this.router.navigate(['/goodtime/']);
+  }
 }

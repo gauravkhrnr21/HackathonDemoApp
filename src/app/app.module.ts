@@ -7,7 +7,7 @@ import {
   PathLocationStrategy
 } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -28,6 +28,7 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { MainComponent } from './main/main.component';
+import { InterestShownComponent } from './interest-shown/interest-shown.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -44,9 +45,11 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NavigationComponent,
     SidebarComponent,
     BreadcrumbComponent,
-    MainComponent
+    MainComponent,
+    InterestShownComponent
   ],
   imports: [
+    ReactiveFormsModule,
     CommonModule,
     BrowserModule,
     BrowserAnimationsModule,

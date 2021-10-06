@@ -1,0 +1,15 @@
+<div class="body"></div>
+<div class="grad"></div>
+<div class="header">
+    <div>Good<span>Times</span></div>
+</div>
+<br>
+<div class="login">
+    <form [formGroup]="loginForm">
+        <input type="text" placeholder="username" formControlName="username">
+        <br>
+        <input type="password" placeholder="password" formControlName="password">
+        <br>
+        <input type="button" value="Login" (click)="onSubmit(loginForm)" >
+    </form>
+</div>

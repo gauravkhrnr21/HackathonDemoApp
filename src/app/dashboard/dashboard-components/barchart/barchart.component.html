@@ -1,0 +1,41 @@
+
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex">
+        <div>
+          <h4 class="card-title m-b-5">
+            Barchart
+          </h4>
+        </div>
+      </div>
+        <div style="display: block;" >
+            <canvas baseChart 
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [legend]="barChartLegend"
+              [chartType]="barChartType">
+            </canvas>
+          </div>
+    </div>
+    <div class="comtainer" style="padding: 50px;">
+        <form>
+            <div class="form-row"> 
+            
+            <div class="form-group col-md-4">
+                <input type="text" class="form-control" name="watch" value="" placeholder="Interest">
+                </div>
+            
+            <div class="form-group col-md-4">
+                <input type="text" class="form-control" id="text" placeholder="Sub interest">
+            </div>
+            
+            <div class="form-group col-md-4">
+                <button type="submit" class="btn btn-primary"><i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i>Search</button>
+            </div>
+            
+            </div>
+        </form>
+    </div>
+  </div>

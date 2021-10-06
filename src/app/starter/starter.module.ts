@@ -11,7 +11,7 @@ const routes: Routes = [
     data: {
       title: 'Starter Page',
       urls: [
-        { title: 'Dashboard', url: '/dashboard' },
+        { title: 'Dashboard', url: '/hackapp' },
         { title: 'Starter Page' }
       ]
     },

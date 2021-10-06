@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 declare var $: any;
 
 @Component({
@@ -11,5 +12,9 @@ export class NavigationComponent {
 
   public showSearch = false;
 
-  constructor() {}
+  constructor(private router:Router) {}
+
+  signOut(){
+    this.router.navigate(['/']);
+  }
 }

@@ -9,6 +9,7 @@ import { VisitGraphComponent } from './dashboard-components/visit-graph/visit-gr
 import { WebsiteGraphComponent } from './dashboard-components/website-graph/website-graph.component';
 import { CardsComponent } from './dashboard-components/cards/cards.component';
 import { ProjectOfMonthComponent } from './dashboard-components/project-of-month/project-of-month.component';
+import { BarchartComponent } from './dashboard-components/barchart/barchart.component';
 
 const routes: Routes = [
   {
@@ -17,8 +18,8 @@ const routes: Routes = [
       title: "Dashboard",
       urls: [{ title: "Dashboard", url: "/dashboard" }, { title: "Dashboard" }],
     },
-    component: DashboardComponent,
-  },
+    component: DashboardComponent
+  }
 ];
 
 @NgModule({
@@ -28,6 +29,6 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     ChartsModule,
   ],
-  declarations: [DashboardComponent, SalesGraphComponent, VisitGraphComponent, WebsiteGraphComponent, CardsComponent, ProjectOfMonthComponent],
+  declarations: [DashboardComponent, SalesGraphComponent, VisitGraphComponent, WebsiteGraphComponent, CardsComponent, ProjectOfMonthComponent, BarchartComponent],
 })
 export class DashboardModule { }

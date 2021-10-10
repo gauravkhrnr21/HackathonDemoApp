@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/service/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,15 +10,16 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  submitted = true;
+  submitted:boolean = true;
+  //loginInvalid :boolean = false;
+  warnmsg:string = "";
 
-  constructor(private formBuilder: FormBuilder,private router: Router ) { 
+  constructor(private formBuilder: FormBuilder,private router: Router,private authService:AuthService ) { 
     this.loginForm = this.formBuilder.group({
       username: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
-  
 
   ngOnInit(): void {}
 
@@ -26,13 +28,28 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(form:FormGroup){
-    //if(this.loginForm.valid){
-      let data = form.value;
-      if(data.username == "gaurav@gmail.com" && data.password == "123"){
-        this.router.navigate(['interest']);
-      }
-    //}
-  }
+    let formData = form.value;
+    if(formData != null){
+      this.authService.signIn(formData.username,formData.password).subscribe(resp => {
+        if(resp != null){
+          this.authService.saveToken(resp.accessToken);
+          this.authService.saveUser(resp);
+          this.authService.setIsLoginFailed(false);
+          this.authService.setIsLoggedIn(true);
+          this.authService.setRoles(resp.roles);
+          this.router.navigateByUrl("/interest");          
+        }else{
+         // this.loginInvalid = true;
+          this.warnmsg = "Something went wrong";
+        }
+      },err => {
+        this.authService.setErrorMsg(err.error.message);
+        this.authService.setIsLoginFailed(false);
+        //this.loginInvalid = true;
+        this.warnmsg = "The username and password were not recognized";
+      });     
+    }
+}
 
   onReset() {
     this.loginForm.reset();

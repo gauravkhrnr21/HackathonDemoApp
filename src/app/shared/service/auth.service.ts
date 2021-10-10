@@ -47,6 +47,10 @@ export class AuthService implements OnInit{
     this.tokenStorage.saveToken(token);
   }
 
+  getToken(){
+    return this.tokenStorage.getToken();
+  }
+
   setIsLoggedIn(isLoggedIn:boolean){
     this.isLoggedIn = isLoggedIn;
   }

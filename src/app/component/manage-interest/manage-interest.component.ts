@@ -24,7 +24,7 @@ export class ManageInterestComponent implements OnInit {
     this.searchGroupService.getAllPosts({}).subscribe(
         response => {
           this.POSTS = response;
-          console.log(response);
+         // console.log(response);
         },
         error => {
           console.log(error);

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { TokenStorageService } from '../service/token-storage.service';
 declare var $: any;
 
 @Component({
@@ -16,7 +17,7 @@ export class NavigationComponent {
   showChart:boolean = false;
 
 
-  constructor(private router:Router,private modalService: NgbModal) {}
+  constructor(private router:Router,private modalService: NgbModal,private tokenStorageService:TokenStorageService) {}
 
   // This is for the first modal
   open(content1:string) {
@@ -28,6 +29,7 @@ export class NavigationComponent {
   }
 
   signOut(){
+    this.tokenStorageService.signOut();
     this.router.navigate(['/']);
   }
 

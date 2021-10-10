@@ -14,6 +14,6 @@ export class InterestShownComponent implements OnInit {
   }
 
   skip(){
-    this.router.navigate(['/main']);
+    this.router.navigate(['/home']);
   }
 }

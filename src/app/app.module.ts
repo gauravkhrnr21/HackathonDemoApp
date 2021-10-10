@@ -21,11 +21,12 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { MainComponent } from './shared/component/main/main.component';
-import { InterestShownComponent } from './interest-shown/interest-shown.component';
+
 import { ModelPopupComponent } from './shared/model-popup/model-popup.component';
 import { BarchartComponent } from './shared/common-chart/barchart/barchart.component';
 import { ChartsModule } from 'ng2-charts';
 import { Approutes } from './shared/routing/app-routing.module';
+import { InterestShownComponent } from './shared/component/interest-shown/interest-shown.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,

@@ -11,12 +11,13 @@ import { AuthService } from "../service/auth.service";
 @Injectable({providedIn: "root"})
 export class AuthGuard implements CanActivate {
     constructor(private authService: AuthService,private router: Router) { }
-    
+
     canActivate(route: ActivatedRouteSnapshot,state: RouterStateSnapshot): boolean | Promise<boolean> {
-        var isAuthenticated = this.authService.isUserLoggedIn();
-        if (!isAuthenticated) {
+        let isAuthenticated = this.authService.isUserLoggedIn();
+        let token = this.authService.getToken();
+        if (token == null) {
             this.router.navigate(['/']);
         }
-        return isAuthenticated;
+        return token != null ? true : false;
     }
 }

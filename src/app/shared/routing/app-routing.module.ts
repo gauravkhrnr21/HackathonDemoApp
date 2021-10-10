@@ -1,6 +1,7 @@
 import { Routes} from '@angular/router';
 import { LoginComponent } from 'src/app/component/login/login.component';
 import { FullComponent } from 'src/app/layouts/full/full.component';
+import { ErrorComponent } from '../component/error/error.component';
 import { InterestShownComponent } from '../component/interest-shown/interest-shown.component';
 import { MainComponent } from '../component/main/main.component';
 import { AuthGuard } from './auth.guard';
@@ -23,6 +24,10 @@ export const Approutes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'error',
+    component: ErrorComponent
+  },
+  {
     path: 'goodtime',
     component: FullComponent,
     canActivate: [AuthGuard],
@@ -43,6 +48,6 @@ export const Approutes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/starter'
+    redirectTo: '/error'
   }
 ];

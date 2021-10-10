@@ -13,7 +13,14 @@ export class ManageInterestComponent implements OnInit {
   count = 0;
   tableSize = 7;
   tableSizes = [3, 6, 9, 12];
-
+  interestData :any = [{name:"Sachin Patil",department:"Technology",location:"Pune",interest:"cricket"},
+  {name:"Manoj Kumar",department:"Adminstrator",location:"Pune",interest:"cricket"},
+  {name:"John Smith",department:"HR",location:"US",interest:"cricket"},
+  {name:"Alex Oliver",department:"Networking",location:"UK",interest:"cricket"},
+  {name:"Prakash Patil",department:"Technology",location:"Delhi",interest:"cricket"},
+  {name:"Kevin Siddle",department:"Security",location:"Austrelia",interest:"cricket"},
+  {name:"Ashish Sharma",department:"HR",location:"Delhi",interest:"cricket"},
+  {name:"Kartik Shinde",department:"Technology",location:"Mumbai",interest:"cricket"}];
   constructor(private searchGroupService: SearchGroupService) { }
 
   ngOnInit(): void {
@@ -21,14 +28,17 @@ export class ManageInterestComponent implements OnInit {
   }  
 
   fetchPosts(): void {
-    this.searchGroupService.getAllPosts({}).subscribe(
-        response => {
-          this.POSTS = response;
+   // this.searchGroupService.getAllPosts({}).subscribe(
+     //   response => {
+       setTimeout(()=>{
+        this.POSTS = this.interestData;
+       },1000);
+          
          // console.log(response);
-        },
+       /* },
         error => {
           console.log(error);
-    });
+    });*/
   }
 
   onTableDataChange(event:any){

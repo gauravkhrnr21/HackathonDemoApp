@@ -225,7 +225,7 @@
                     </div>
                     <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
                     <div class="col-md-9">
-                        <button type="submit" class="btn btn-primary btn-lg mb-1">Submit</button>
+                        <button type="submit" class="btn btn-primary btn-lg mb-1" style="background-color: #002e87;">Submit</button>
                     </div>
                     </div>
                 </form>
@@ -248,7 +248,7 @@
                 </div>
                 
                 <div class="form-group col-md-4">
-                    <button type="submit" class="btn btn-primary"><i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i>Search</button>
+                    <button type="submit" class="btn btn-primary" style="background-color: #002e87;"><i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i>Search</button>
                 </div>
             </div>
         </form>
@@ -267,8 +267,10 @@
             <table class="table">
             <thead>
                 <tr>
-                <th>ID</th>
-                <th>Title</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Address</th>
+                <th>Interest</th>
                 </tr>
             </thead>
             <tbody>
@@ -278,8 +280,10 @@
                         totalItems: count
                         };
                 let i = index" [class.active]="i == currentIndex">
-                <th scope="row">{{post.id}}</th>
-                <td>{{post.title}}</td>
+                <td scope="row">{{post.name}}</td>
+                <td>{{post.department}}</td>
+                <td>{{post.location}}</td>
+                <td>{{post.interest}}</td>
                 </tr>
             </tbody>
             </table>

@@ -50,6 +50,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ErrorComponent
   ],
   imports: [
+    
     ReactiveFormsModule,
     CommonModule,
     BrowserModule,

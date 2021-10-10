@@ -11,14 +11,14 @@ export class HorrizontalBarChartComponent implements OnInit {
   public barChartOptions: ChartOptions = {
     responsive: true,
   };
-  public barChartLabels: Label[] = ['Poem', 'Study Circle', 'Technology', 'Dance', 'Food', 'Sport'];
+  public barChartLabels: Label[] = ['Cricket', 'Badminton', 'Chess', 'Yoga', 'Cycle', 'Football'];
   public barChartType: ChartType = 'horizontalBar';
   public barChartLegend = true;
   public barChartPlugins = [];
   
   public barChartData: ChartDataSets[] = [
-    { data: [65, 67, 70, 75, 80, 90], label: 'Interested' },
-    { data: [50, 48, 47, 49, 44, 40], label: 'Not Interested' }
+    { data: [65, 67, 70, 75, 80, 90], label: 'Interested',backgroundColor:'#002e87',hoverBackgroundColor:'#002e87' },
+    { data: [50, 48, 47, 49, 44, 40], label: 'Not Interested',backgroundColor:'#009ddf',hoverBackgroundColor:'#009ddf' }
   ];
   constructor() { }
 

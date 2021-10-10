@@ -17,8 +17,8 @@ export class BarchartComponent implements OnInit {
   public barChartPlugins = [];
   
   public barChartData: ChartDataSets[] = [
-    { data: [65, 67, 70, 75, 80, 90], label: 'Interested' },
-    { data: [50, 48, 47, 49, 44, 40], label: 'Not Interested' }
+    { data: [65, 67, 70, 75, 80, 90], label: 'Interested',backgroundColor:'#002e87',hoverBackgroundColor:'#002e87' },
+    { data: [50, 48, 47, 49, 44, 40], label: 'Not Interested',backgroundColor:'#009ddf',hoverBackgroundColor:'#009ddf' }
   ];
   constructor() { }
 

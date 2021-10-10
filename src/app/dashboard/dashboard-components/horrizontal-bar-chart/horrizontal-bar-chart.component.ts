@@ -3,16 +3,16 @@ import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import { Label } from 'ng2-charts';
 
 @Component({
-  selector: 'app-barchart',
-  templateUrl: './barchart.component.html',
-  styleUrls: ['./barchart.component.css']
+  selector: 'app-horrizontal-bar-chart',
+  templateUrl: './horrizontal-bar-chart.component.html',
+  styleUrls: ['./horrizontal-bar-chart.component.css']
 })
-export class BarchartComponent implements OnInit {
+export class HorrizontalBarChartComponent implements OnInit {
   public barChartOptions: ChartOptions = {
     responsive: true,
   };
   public barChartLabels: Label[] = ['Poem', 'Study Circle', 'Technology', 'Dance', 'Food', 'Sport'];
-  public barChartType: ChartType = 'bar';
+  public barChartType: ChartType = 'horizontalBar';
   public barChartLegend = true;
   public barChartPlugins = [];
   

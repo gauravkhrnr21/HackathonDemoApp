@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 declare var $: any;
 
 @Component({
@@ -11,10 +12,26 @@ export class NavigationComponent {
   toggleSidebar = new EventEmitter<void>();
 
   public showSearch = false;
+  closeResult:string = '';
+  showChart:boolean = false;
 
-  constructor(private router:Router) {}
+
+  constructor(private router:Router,private modalService: NgbModal) {}
+
+  // This is for the first modal
+  open(content1:string) {
+    this.modalService.open(content1, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      //this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
 
   signOut(){
     this.router.navigate(['/']);
+  }
+
+  openChart(){
+    this.showChart = true;
   }
 }

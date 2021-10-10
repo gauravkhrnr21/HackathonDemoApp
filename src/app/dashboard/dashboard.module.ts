@@ -9,7 +9,8 @@ import { VisitGraphComponent } from './dashboard-components/visit-graph/visit-gr
 import { WebsiteGraphComponent } from './dashboard-components/website-graph/website-graph.component';
 import { CardsComponent } from './dashboard-components/cards/cards.component';
 import { ProjectOfMonthComponent } from './dashboard-components/project-of-month/project-of-month.component';
-import { BarchartComponent } from './dashboard-components/barchart/barchart.component';
+import { HorrizontalBarChartComponent } from './dashboard-components/horrizontal-bar-chart/horrizontal-bar-chart.component';
+import { NgxPaginationModule } from "ngx-pagination";
 
 const routes: Routes = [
   {
@@ -27,8 +28,8 @@ const routes: Routes = [
     FormsModule,
     CommonModule,
     RouterModule.forChild(routes),
-    ChartsModule,
+    ChartsModule
   ],
-  declarations: [DashboardComponent, SalesGraphComponent, VisitGraphComponent, WebsiteGraphComponent, CardsComponent, ProjectOfMonthComponent, BarchartComponent],
+  declarations: [DashboardComponent, SalesGraphComponent, VisitGraphComponent, WebsiteGraphComponent, CardsComponent, ProjectOfMonthComponent, HorrizontalBarChartComponent],
 })
 export class DashboardModule { }

@@ -1,20 +1,46 @@
 import { Routes } from '@angular/router';
+import { AddEventComponent } from './add-event/add-event.component';
+import { ChatRoomComponent } from './chat-room/chat-room.component';
 import { FeedbackComponent } from './feedback/feedback.component';
-import { SearchGroupComponent } from './search-group/search-group.component';
+import { ManageInterestComponent } from './manage-interest/manage-interest.component';
 
 export const ComponentsRoutes: Routes = [
   {
     path: '',
     children: [
       {
-        path: 'groupsearch',
-        component: SearchGroupComponent,
+        path: 'manageinterst',
+        component: ManageInterestComponent,
         data: {
-          title: 'Seacrh Interest',
+          title: 'Manage Interest',
           urls: [
             { title: 'Dashboard', url: '/dashboard' },
             { title: '' },
-            { title: 'Search Interest' }
+            { title: 'Manage Interest' }
+          ]
+        }
+      },
+      {
+        path: 'chatroom',
+        component: ChatRoomComponent,
+        data: {
+          title: 'Chat Room',
+          urls: [
+            { title: 'Dashboard', url: '/dashboard' },
+            { title: '' },
+            { title: 'Chat Room' }
+          ]
+        }
+      },
+      {
+        path: 'event',
+        component: AddEventComponent,
+        data: {
+          title: 'Add Event',
+          urls: [
+            { title: 'Dashboard', url: '/dashboard' },
+            { title: '' },
+            { title: 'Add Event' }
           ]
         }
       },

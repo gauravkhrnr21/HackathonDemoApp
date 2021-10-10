@@ -1,0 +1,157 @@
+<div id="main-wrapper" [ngClass]="{'show-sidebar': showMobileMenu}" dir="ltr" data-theme="light" data-layout="vertical"
+    [attr.data-sidebartype]="sidebartype" data-sidebar-position="absolute" data-header-position="fixed"
+    data-boxed-layout="full">
+    <header class="topbar" data-navbarbg="skin1">
+        <nav class="d-flex top-navbar navbar-expand-md navbar-light">
+            <div class="navbar-header" [ngClass]="(expandLogo)?'expand-logo':''" data-logobg="skin6">
+                <a (click)="showMobileMenu = !showMobileMenu"
+                    class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)">
+                    <i [ngClass]="(showMobileMenu)?'ti-close':'ti-menu'"></i>
+                </a>
+               
+                <a class="navbar-brand" href="/">
+                    <b class="logo-icon">
+                        <img src="assets/images/logo-light-icon.png" alt="homepage" class="dark-logo" />
+                    </b>
+                    <!--End Logo icon -->
+                    <!-- Logo text -->
+                    <span class="logo-text">
+                        <!-- Light Logo text -->
+                        <img src="assets/images/logo-light-text.png" class="dark-logo" alt="homepage" />
+                    </span>
+                </a>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Toggle which is visible on mobile only -->
+                <!-- ============================================================== -->
+                <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)"
+                    data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="ti-more"></i>
+                </a>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Logo -->
+            <!-- ============================================================== -->
+            <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin6">
+                <app-navigation (toggleSidebar)="toggleSidebarType()" class="w-100"></app-navigation>
+            </div>
+        </nav>
+    </header>
+    <!-- ============================================================== -->
+    <!-- Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <aside class="left-sidebar" data-sidebarbg="skin6" (mouseover)="Logo()" (mouseout)="Logo()">
+        <!-- Sidebar scroll-->
+        <div class="scroll-sidebar" [perfectScrollbar]="config">
+            <div class="user-profile">
+                <!-- User profile image -->
+                <div class="profile-img"> <img src="assets/images/users/profile.png" alt="user" />
+                    <!-- this is blinking heartbit-->
+                    <div class="notify setpos"> <span class="heartbit"></span> <span class="point"></span> </div>
+                </div>
+                <!-- User profile text-->
+                <div class="profile-text">
+                    <!-- <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button"
+                        aria-haspopup="true" aria-expanded="true">Markarn
+                        Doe <i class="fa fa-angle-down"></i></a> -->
+                    <div class="">
+                        <div>
+                            <span style="color: cornsilk; font-size: 22px;">John Miller</span>
+                        </div>
+                        <div>
+                            <span style="color: cornsilk; font-size: 12px;">Software Engineer</span>
+                        </div>
+                        <div>
+                            <span style="color: cornsilk; font-size: 12px;">IT Department</span>
+                        </div>
+                        <div>
+                            <span style="color: cornsilk; font-size: 12px;">EMP ID G1002345</span>
+                        </div>
+                        <div>
+                            <span style="color:darkorange; font-size: 12px;">PROJECT Econnection</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <app-sidebar></app-sidebar> -->
+        </div>
+    </aside>
+    <!-- ============================================================== -->
+    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Page wrapper  -->
+    <!-- ============================================================== -->
+    <div class="page-wrapper">
+        <app-breadcrumb></app-breadcrumb>
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="d-flex justify-content-between align-items-center breaking-news bg-white">
+                            <div class="d-flex flex-row flex-grow-1 flex-fill justify-content-center bg-danger py-2 text-white px-1 news"><span class="d-flex align-items-center">&nbsp;Events</span></div>
+                            <marquee class="news-scroll" behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();"> <a href="#"><span style="color: #EDCE12;">John Miller </span> : Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </a> <span class="dot"></span> <a href="#"><span style="color: #EDCE12;">Alex Oliver </span> : Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut </a> <span class="dot"></span> <a href="#"><span style="color:#EDCE12;">Praddep: </span> Duis aute irure dolor in reprehenderit in voluptate velit esse </a> </marquee>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row"> 
+                        <div class="col-6 col-md-6" style="position: relative;">
+                            <img id="imgdiv" src="../../assets/images/main/sport.jpg" style="width: 100%;" class="col-md-12 img-thumbnail size" (click)="goToDashboard('sport')">
+                            <span style="position: absolute; top:40%; left:40% ; font-size: 20px; font-weight: 900; color:blue;">SPORTS</span>
+                        </div>
+                        <div class="col-6 col-md-6"  style="position: relative;">
+                            <img id="imgdiv" src="../../assets/images/main/studytime.jpg"  style="width: 100%;" class="col-md-12 img-thumbnail size" alt="Cinque Terre" (click)="goToDashboard('study')">
+                            <span style="position: absolute; top:40%; left:35% ; font-size: 20px; font-weight: 900;color:blue;">STUDY CIRCLE</span>
+                        </div>                    
+                    </div>
+                    <div class="row"> 
+                        <div class="col-6 col-md-6"  style="position: relative;">
+                            <img id="imgdiv" src="../../assets/images/main/shopping.jpg" style="width: 100%;" class="col-md-12  img-thumbnail size" alt="Cinque Terre" (click)="goToDashboard('shopping')"> 
+                            <span style="position: absolute; top:40%; left:40% ; font-size: 20px; font-weight: 900;color:blue;">SHOPPING</span>
+                        </div>
+                        <div class="col-6 col-md-6"  style="position: relative;">
+                            <img id="imgdiv" src="../../assets/images/main/activity.jpg" style="width: 100%;" class="col-md-12 img-thumbnail size" alt="Cinque Terre" (click)="goToDashboard('activity')">
+                            <span style="position: absolute; top:40%; left:40% ; font-size: 20px; font-weight: 900;color:blue;">ACTIVITY</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-md-2">
+                    <h2>right side </h2>
+                </div> -->
+                </div>
+               
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Start Page Content -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer text-center">
+            2020 © Elite Admin brought to you by <a href="https://www.wrappixel.com/">wrappixel.com</a>
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+</div>

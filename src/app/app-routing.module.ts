@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { InterestShownComponent } from './interest-shown/interest-shown.component';
 import { LoginComponent } from './component/login/login.component';
-
 import { FullComponent } from './layouts/full/full.component';
-import { MainComponent } from './main/main.component';
+import { MainComponent } from './shared/component/main/main.component';
+
 
 export const Approutes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },

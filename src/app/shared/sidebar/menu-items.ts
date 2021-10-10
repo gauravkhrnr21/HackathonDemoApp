@@ -1,15 +1,14 @@
 import { RouteInfo } from './sidebar.metadata';
 
 export const ROUTES: RouteInfo[] = [
-  // {
-  //   path: '/hackapp/',
-  //   title: 'Personal',
-  //   icon: 'mdi mdi-dots-horizontal',
-  //   class: 'nav-small-cap',
-  //   extralink: true,
-  //   submenu: []
-  // },
-  
+  {
+    path: '/main',
+    title: 'HOME',
+    icon: 'mdi mdi-home-variant',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
   {
     path: '/goodtime/starter',
     title: 'Dashboard',
@@ -19,9 +18,33 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
-    path: '/goodtime/component/groupsearch',
-    title: 'Search Interest',
-    icon: 'fa fa-thumbs-up',
+    path: '/goodtime/',
+    title: 'MAIN MENUS',
+    icon: 'mdi mdi-dots-horizontal',
+    class: 'nav-small-cap',
+    extralink: true,
+    submenu: []
+  },
+  {
+    path: '/goodtime/component/manageinterst',
+    title: 'Manage Interest',
+    icon: 'mdi mdi-table-edit',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/goodtime/component/event',
+    title: 'Add Event',
+    icon: 'mdi mdi-calendar-clock',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/goodtime/component/chatroom',
+    title: 'Chat Room',
+    icon: 'mdi mdi-qqchat',
     class: '',
     extralink: false,
     submenu: []
@@ -29,7 +52,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/goodtime/component/feedback',
     title: 'Feedbacks',
-    icon: 'fa fa-comments',
+    icon: 'mdi mdi-comment-multiple-outline',
     class: '',
     extralink: false,
     submenu: []

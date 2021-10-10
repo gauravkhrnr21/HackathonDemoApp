@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchGroupComponent } from './search-group.component';
+import { ModelPopupComponent } from './model-popup.component';
 
-describe('SearchGroupComponent', () => {
-  let component: SearchGroupComponent;
-  let fixture: ComponentFixture<SearchGroupComponent>;
+describe('ModelPopupComponent', () => {
+  let component: ModelPopupComponent;
+  let fixture: ComponentFixture<ModelPopupComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SearchGroupComponent ]
+      declarations: [ ModelPopupComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SearchGroupComponent);
+    fixture = TestBed.createComponent(ModelPopupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

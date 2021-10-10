@@ -27,8 +27,11 @@ import { SpinnerComponent } from './shared/spinner.component';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
-import { MainComponent } from './main/main.component';
+import { MainComponent } from './shared/component/main/main.component';
 import { InterestShownComponent } from './interest-shown/interest-shown.component';
+import { ModelPopupComponent } from './shared/model-popup/model-popup.component';
+import { BarchartComponent } from './shared/common-chart/barchart/barchart.component';
+import { ChartsModule } from 'ng2-charts';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -46,7 +49,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SidebarComponent,
     BreadcrumbComponent,
     MainComponent,
-    InterestShownComponent
+    InterestShownComponent,
+    ModelPopupComponent,
+    BarchartComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -57,6 +62,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     HttpClientModule,
 	  PerfectScrollbarModule,
     NgbModule,
+    ChartsModule,
     RouterModule.forRoot(Approutes, { useHash: false, relativeLinkResolution: 'legacy' })
   ],
   providers: [
@@ -69,6 +75,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
     }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[]
 })
 export class AppModule {}

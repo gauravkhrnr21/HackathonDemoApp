@@ -16,8 +16,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,private router: Router,private authService:AuthService ) { 
     this.loginForm = this.formBuilder.group({
-      username: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      username: ['', [Validators.required, Validators.minLength(5)]],
+      password: ['', [Validators.required, Validators.minLength(5)]],
     });
   }
 
@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
         this.authService.setErrorMsg(err.error.message);
         this.authService.setIsLoginFailed(false);
         //this.loginInvalid = true;
-        this.warnmsg = "The username and password were not recognized";
+        this.warnmsg = "Incorrect username and password";
       });     
     }
 }

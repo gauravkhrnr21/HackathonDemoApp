@@ -5,55 +5,15 @@
         <div class="card rounded-3">
           <div class="card-body p-4 p-md-5">
             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Interests</h3>
-            <form class="px-md-2">
+            <form [formGroup]="interestForm"class="px-md-2">
               <div class="mb-4">
                 <div class="row">
                   <b><label class="form-label" for="form3Example1q">SPORT/FITNESS</label></b>
                 </div>
                 <div class="row">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                    <label class="form-check-label" for="inlineCheckbox1">Cricket</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">FOOT BALL</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                    <label class="form-check-label" for="inlineCheckbox3">BADMITTON</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                    <label class="form-check-label" for="inlineCheckbox3">CARROM</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                    <label class="form-check-label" for="inlineCheckbox3">TREKKING</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                    <label class="form-check-label" for="inlineCheckbox3">CYCLING</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                    <label class="form-check-label" for="inlineCheckbox3">BOATING</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                    <label class="form-check-label" for="inlineCheckbox3">MARATHON</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                    <label class="form-check-label" for="inlineCheckbox3">TABLE TENNIS</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                    <label class="form-check-label" for="inlineCheckbox3">YOGA</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                    <label class="form-check-label" for="inlineCheckbox3">WORKOUT</label>
+                  <div class="form-check form-check-inline" *ngFor="let sport of sports">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="{{sport.id}}">
+                    <label class="form-check-label" for="inlineCheckbox1">{{sport.name}}</label>
                   </div>
                 </div>
               </div>
@@ -63,14 +23,11 @@
                   <b><label class="form-label" for="form3Example1q">FOOD</label></b>
                 </div>
                 <div class="row">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                    <label class="form-check-label" for="inlineCheckbox1">VEG</label>
+                  <div class="form-check form-check-inline" *ngFor="let food of foods">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="{{food.id}}">
+                    <label class="form-check-label" for="inlineCheckbox1">{{food.name}}</label>
                   </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">NONVEG</label>
-                  </div>
+                 
                 </div>
               </div>
 
@@ -79,41 +36,9 @@
                   <b><label class="form-label" for="form3Example1q">CREATIVITY</label></b>
                 </div>
                 <div class="row">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                    <label class="form-check-label" for="inlineCheckbox1">ZOOMBA</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">TRADITIONAL DANCE</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">MUSIC</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">TABLA</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">BOLLYWOOD DANCE DANCE</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">ART</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">POEM</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">LITERATURE</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">ART & CRAFT</label>
+                  <div class="form-check form-check-inline" *ngFor="let creativity of creativities">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="{{creativity.id}}}">
+                    <label class="form-check-label" for="inlineCheckbox1">{{creativity.name}}</label>
                   </div>
                 </div>
               </div>
@@ -123,25 +48,9 @@
                   <b><label class="form-label" for="form3Example1q">TECHNOLOGY</label></b>
                 </div>
                 <div class="row">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                    <label class="form-check-label" for="inlineCheckbox1">JAVA</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">SQL</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">CLOUD</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">ANGULAR</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">NODE JS</label>
+                  <div class="form-check form-check-inline" *ngFor="let technology of technologies">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="{{technology.id}}">
+                    <label class="form-check-label" for="inlineCheckbox1">{{technology.name}}</label>
                   </div>
                 </div>
               </div>
@@ -151,17 +60,9 @@
                   <b><label class="form-label" for="form3Example1q">STOCK UPDATES</label></b>
                 </div>
                 <div class="row">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                    <label class="form-check-label" for="inlineCheckbox1">EQUALITY</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">IPO</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">MUTUAL FUNDS</label>
+                  <div class="form-check form-check-inline" *ngFor="let stock of stocks">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="{{stock.id}}">
+                    <label class="form-check-label" for="inlineCheckbox1">{{stock.name}}</label>
                   </div>
                 </div>
               </div>
@@ -171,21 +72,9 @@
                   <b><label class="form-label" for="form3Example1q">PARENTING</label></b>
                 </div>
                 <div class="row">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                    <label class="form-check-label" for="inlineCheckbox1">BABY FOODS/HEALTH</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">CHILD PSYCHOLOGY</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">CHILDREN SPORTS</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">ROOMMATE</label>
+                  <div class="form-check form-check-inline" *ngFor="let parenting of parentings">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="{{parenting.id}}">
+                    <label class="form-check-label" for="inlineCheckbox1">{{parenting.name}}</label>
                   </div>
                 </div>
               </div>
@@ -195,21 +84,9 @@
                   <b><label class="form-label" for="form3Example1q">SHOPPING</label></b>
                 </div>
                 <div class="row">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                    <label class="form-check-label" for="inlineCheckbox1">GARMENTS</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">GROCERY</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">SPORT EQUIPMENTS</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">ELECTRONICS</label>
+                  <div class="form-check form-check-inline" *ngFor="let shopping of shoppings">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="{{shopping.id}}">
+                    <label class="form-check-label" for="inlineCheckbox1">{{shopping.name}}</label>
                   </div>
                 </div>
               </div>

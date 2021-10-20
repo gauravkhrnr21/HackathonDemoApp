@@ -1,0 +1,153 @@
+<div class="col-md-12 card">
+    <div class="container">
+        <!-- <div class="row"> -->
+            <br/>
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2" [ngStyle]="{'text-align': 'center'}"> Add Event</h3>
+            <form [formGroup]="eventForm" (ngSubmit)="onSubmit(eventForm)">
+                <div class="form-group">
+                    <label for="email">Event Title</label>
+                    <input type="email" class="form-control" id="title" placeholder="Enter title" name="title" formControlName="title">
+                    <div
+                        *ngIf="!loginForm.controls.username?.valid && (loginForm.controls.username?.dirty
+                        ||loginForm.controls.username?.touched)" style="font-size:12px;color: red;">
+                        Title is not valid
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Discription</label>
+                    <textarea class="form-control rounded-0" id="discription" name="discription" rows="3" formControlName="discription"></textarea>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <label for="discription">Interest</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" checked value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">SPORT</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <label class="form-check-label" for="inlineCheckbox2">STUDY CIRCLE</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox3">SHOPPING</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox3">ACTIVITY</label>
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <div>
+                        <label for="discription">Sub Interest</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Cricket</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" checked>
+                        <label class="form-check-label" for="inlineCheckbox2">FOOT BALL</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox3">BADMITTON</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox3">CARROM</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox3">TREKKING</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox3">CYCLING</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox3">BOATING</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox3">MARATHON</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox3">TABLE TENNIS</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox3">YOGA</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox3">WORKOUT</label>
+                    </div>
+                </div>   
+                <div class="form-group hidden ">
+                    <div>
+                        <label for="discription">From Date</label>
+                    </div>
+                    <div class="form-inline">
+                        <div class="input-group">
+                            <input type="text"
+                            placeholder="Datepicker"
+                            class="form-control"
+                            bsDatepicker
+                            [bsConfig]="{ isAnimated: true }"
+                            formControlName="formDate">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group hidden">
+                    <div>
+                        <label for="discription">To Date</label>
+                    </div>
+                    <div class="form-inline">
+                        <div class="form-group hidden">
+                            <div class="form-inline">
+                                <div class="input-group">
+                                    <input type="text"
+                                    placeholder="Datepicker"
+                                    class="form-control"
+                                    bsDatepicker
+                                    [bsConfig]="{ isAnimated: true }"
+                                    formControlName="toDate">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="venue">Venue</label>
+                    <input type="venue" class="form-control" id="venue" placeholder="Enter Venue" name="venue" formControlName="venue">
+                </div>
+                <button type="submit" class="btn btn-default" style="background-color: #002e87;color:white;">ADD</button>
+            </form>
+            <br/>
+        </div>    
+    <!-- </div>      -->
+</div>
+<div class="col-md-12 card">
+    <div class="container">
+        <br/>
+        <div class="alert alert-primary" role="alert">
+            Anatomy & Physiology (B/C) - This event encompasses the anatomy and physiology of selected body systems, this year limited to nervous and endocrine systems and sense organs.
+        </div>
+        <div class="alert alert-secondary" role="alert">
+            Robot Arm (C) - Prior to the competition, teams must design, build, document and test one robotic device to move scoreable items.
+        </div>
+        <div class="alert alert-success" role="alert">
+            Scrambler (B) - Competitors must design, build and test a mechanical device which uses the energy from a falling mass to transport an egg along a track as quickly as possible and stop as close to the center of a terminal barrier without breaking the egg.
+        </div>
+        <div class="alert alert-danger" role="alert">
+            Wright Stuff (B) - Prior to the competition teams design, construct and test free flight rubber-powered monoplanes to achieve maximum time aloft.
+        </div>
+        <div class="alert alert-warning" role="alert">
+            Game On (C) - This event will determine a team's ability to design and build an original computer game incorporating the theme provided to them by the supervisor using the program Scratch.
+        </div>
+    </div>
+</div>       

@@ -1,0 +1,28 @@
+<div class="col-md-12 card">
+    <form [formGroup]="feedbackForm">
+        <div class="modal-content">
+            <br/>
+            <div class="modal-header">
+                <h3>Feedback Request</h3>
+                <button type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
+            </div>
+            <div class="modal-body text-center"> <i class="far fa-file-alt fa-4x mb-3 animated rotateIn icon1"></i>
+                <h3>Your opinion matters</h3>
+                <h5>Help us improve our product? <strong>Give us your feedback.</strong></h5>
+                <hr>
+                <h6>Your Rating</h6>
+            </div>
+            <div class="form-check mb-4"> <input name="feedback" type="radio"> <label class="ml-3" formControlName="feedback">Good</label> </div>
+            <div class="form-check mb-4"> <input name="feedback" type="radio"> <label class="ml-3" formControlName="feedback">Average</label> </div>
+            <div class="form-check mb-4"> <input name="feedback" type="radio"> <label class="ml-3" formControlName="feedback">Poor</label> </div>
+            <div class="text-center">
+                <h4>What could we improve?</h4>
+            </div> 
+            <textarea type="textarea" placeholder="Your Message" rows="3" formControlName="comment"></textarea> 
+            <div class="modal-footer"> 
+                <button class="btn btn-primary" style="background-color: #002e87;">Send <i class="fa fa-paper-plane"></i> </a> <a href="" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button> 
+            </div>
+            <br/>
+        </div>
+    </form>    
+</div>

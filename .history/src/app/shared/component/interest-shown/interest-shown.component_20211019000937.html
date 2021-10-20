@@ -1,0 +1,110 @@
+<section class="h-100 h-custom" style="background-color: #002e87;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Interests</h3>
+            <form [formGroup]="interestForm"class="px-md-2" (ngSubmit)="onSubmit(interestForm)">
+              <div class="mb-4">
+                <div class="row">
+                  <b><label class="form-label" for="form3Example1q">SPORT/FITNESS</label></b>
+                </div>
+                <div class="row">
+                  <div class="form-check form-check-inline" formArrayName="sports" *ngFor="let sport of sports">
+                    <input class="form-check-input" type="checkbox" value="test" id="inlineCheckbox1" [formControlName]="sport.id" value="true">
+                    <label class="form-check-label" for="inlineCheckbox1">{{sport.name}}</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <div class="row">
+                  <b><label class="form-label" for="form3Example1q">FOOD</label></b>
+                </div>
+                <div class="row">
+                  <div class="form-check form-check-inline" *ngFor="let food of foods">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="{{food.id}}">
+                    <label class="form-check-label" for="inlineCheckbox1">{{food.name}}</label>
+                  </div>
+                 
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <div class="row">
+                  <b><label class="form-label" for="form3Example1q">CREATIVITY</label></b>
+                </div>
+                <div class="row">
+                  <div class="form-check form-check-inline" *ngFor="let creativity of creativities">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="{{creativity.id}}}">
+                    <label class="form-check-label" for="inlineCheckbox1">{{creativity.name}}</label>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mb-4">
+                <div class="row">
+                  <b><label class="form-label" for="form3Example1q">TECHNOLOGY</label></b>
+                </div>
+                <div class="row">
+                  <div class="form-check form-check-inline" *ngFor="let technology of technologies">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="{{technology.id}}">
+                    <label class="form-check-label" for="inlineCheckbox1">{{technology.name}}</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <div class="row">
+                  <b><label class="form-label" for="form3Example1q">STOCK UPDATES</label></b>
+                </div>
+                <div class="row">
+                  <div class="form-check form-check-inline" *ngFor="let stock of stocks">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="{{stock.id}}">
+                    <label class="form-check-label" for="inlineCheckbox1">{{stock.name}}</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <div class="row">
+                  <b><label class="form-label" for="form3Example1q">PARENTING</label></b>
+                </div>
+                <div class="row">
+                  <div class="form-check form-check-inline" *ngFor="let parenting of parentings">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="{{parenting.id}}">
+                    <label class="form-check-label" for="inlineCheckbox1">{{parenting.name}}</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <div class="row">
+                  <b><label class="form-label" for="form3Example1q">SHOPPING</label></b>
+                </div>
+                <div class="row">
+                  <div class="form-check form-check-inline" *ngFor="let shopping of shoppings">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="{{shopping.id}}">
+                    <label class="form-check-label" for="inlineCheckbox1">{{shopping.name}}</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                <div class="col-md-6">
+                </div>
+              </div>
+              <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                <div class="col-md-9">
+                  <button type="submit" class="btn btn-success btn-lg mb-1" style="color: white; background-color: #002e87;">SAVE</button>
+                </div>
+                <div class="col-md-3">
+                  <!-- <b><a href="javascript:void(0);" (click)="skip();">SKIP PAGE</a></b> -->
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>

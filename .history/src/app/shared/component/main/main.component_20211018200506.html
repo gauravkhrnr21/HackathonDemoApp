@@ -1,0 +1,149 @@
+<div id="main-wrapper" [ngClass]="{'show-sidebar': showMobileMenu}" dir="ltr" data-theme="light" data-layout="vertical"
+    [attr.data-sidebartype]="sidebartype" data-sidebar-position="absolute" data-header-position="fixed"
+    data-boxed-layout="full">
+    <header class="topbar" data-navbarbg="skin1">
+        <nav class="d-flex top-navbar navbar-expand-md navbar-light">
+            <div class="navbar-header" [ngClass]="(expandLogo)?'expand-logo':''" data-logobg="skin6">
+                <a (click)="showMobileMenu = !showMobileMenu"
+                    class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)">
+                    <i [ngClass]="(showMobileMenu)?'ti-close':'ti-menu'"></i>
+                </a>
+               
+                <a class="navbar-brand" href="/" style="background-color: rgb(34, 46, 60);">
+                    <b class="logo-icon">
+                        <img src="assets/images/logo-light-icon.png" alt="homepage" class="dark-logo" />
+                    </b>
+                    <!--End Logo icon -->
+                    <!-- Logo text -->
+                    <span class="logo-text">
+                        <!-- Light Logo text -->
+                        <img src="assets/images/logo-light-text.png" class="dark-logo" alt="homepage" />
+                    </span>
+                </a>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Toggle which is visible on mobile only -->
+                <!-- ============================================================== -->
+                <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)"
+                    data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="ti-more"></i>
+                </a>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Logo -->
+            <!-- ============================================================== -->
+            <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin6" style="background-color: rgb(0, 46, 135);">
+                <app-navigation (toggleSidebar)="toggleSidebarType()" class="w-100"></app-navigation>
+            </div>
+        </nav>
+    </header>
+    <!-- ============================================================== -->
+    <!-- Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <aside class="left-sidebar" data-sidebarbg="skin6" (mouseover)="Logo()" (mouseout)="Logo()" style="background-color: rgb(34, 46, 60);">
+        <!-- Sidebar scroll-->
+        <div class="scroll-sidebar" [perfectScrollbar]="config">
+            <div class="user-profile" style="background-color: rgb(34, 46, 60);">
+                <!-- User profile image -->
+                <div class="profile-img"> <img src="assets/images/users/2.jpg" alt="user" />
+                    <!-- this is blinking heartbit-->
+                    <div class="notify setpos" style="color:cyan;"> <span class="heartbit" style="border-color:cyan;"></span> <span class="point"></span> </div>
+                </div>
+                <!-- User profile text-->
+                <div class="profile-text">
+                    <!-- <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button"
+                        aria-haspopup="true" aria-expanded="true">Markarn
+                        Doe <i class="fa fa-angle-down"></i></a> -->
+                    <div class="">
+                        <div>
+                            <span style="color: cornsilk; font-size: 22px;">{{user.name}}</span>
+                        </div>
+                        <div>
+                            <span style="color: cornsilk; font-size: 12px;">{{user.designation}}</span>
+                        </div>
+                        <div>
+                            <span style="color: cornsilk; font-size: 12px;">{{user.department}}</span>
+                        </div>
+                        <div>
+                            <span style="color: cornsilk; font-size: 12px;">EMP ID {{user.id}}</span>
+                        </div>
+                        <div>
+                            <span style="color:#009ddf; font-size: 12px;">PROJECT {{user.project}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <app-sidebar></app-sidebar> -->
+        </div>
+    </aside>
+    <!-- ============================================================== -->
+    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Page wrapper  -->
+    <!-- ============================================================== -->
+    <div class="page-wrapper">
+        <app-breadcrumb></app-breadcrumb>
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="d-flex justify-content-between align-items-center breaking-news bg-white" >
+                            <div class="d-flex flex-row flex-grow-1 flex-fill justify-content-center py-2 text-white px-1 news" style="background-color: rgb(0, 46, 135)"><span class="d-flex align-items-center">&nbsp;Events</span></div>
+                            <marquee class="news-scroll" behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();"> 
+                                <a href="" *ngFor="let event of events">
+                                    <span class="dot"></span><span style="color:orange">{{event.author}} </span> : {{event.title}} 
+                                </a>
+                            </marquee>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <div class="container">
+                    <div class="card">
+                        <div class="col-md-12">
+                            <div class="row"> 
+                                <div class="col-6 col-md-6" style="position: relative;" *ngFor="let interest of interests">
+                                    <img id="imgdiv" src="../../assets/images/main/{{interest.path}}" style="width: 100%;" class="col-md-12 img-thumbnail size" (click)="goToDashboard('sport')">
+                                    <span style="position: absolute; top:40%; left:40% ; font-size: 20px; font-weight: 900; color:#002e87;">{{interest.name | uppercase}}</span>
+                                </div>                 
+                            </div>
+                        </div>
+                    </div>    
+                <!-- <div class="col-md-2">
+                    <h2>right side </h2>
+                </div> -->
+                </div>
+               
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Start Page Content -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer text-center">
+            2021 © GoodTimes brought to you by <a href="https://www.tsys.com/">TSYS global payment</a>
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+</div>

@@ -1,0 +1,22 @@
+
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex">
+        <div class="row">
+          <h4 class="card-title m-b-5">
+            Barchart
+          </h4>
+        </div>
+      </div>
+        <div style="display: block;" >
+            <canvas baseChart 
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [legend]="barChartLegend"
+              [chartType]="barChartType">
+            </canvas>
+          </div>
+    </div>
+  </div>

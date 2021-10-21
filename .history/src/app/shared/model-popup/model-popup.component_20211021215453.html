@@ -1,0 +1,36 @@
+<div  *ngIf="" class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+    <!-- modal-dialog -->
+    <div class="modal-dialog" role="document">
+      <!-- modal-content -->
+      <div class="modal-content">
+        <!-- modal-header -->
+        <div class="modal-header">
+          <button type="button" class="close" aria-label="Close" (click)="closeModalDialog();"><span aria-hidden="true">&times;</span></button>
+          <!-- <h4 class="modal-title">Login</h4> -->
+        </div>
+  
+        <!-- modal-body -->
+        <div class="modal-body">
+            <app-barchart></app-barchart>
+        </div>
+  
+        <!-- modal-footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default"  (click)="closeModalDialog();">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div *ngIf="" class="container d-flex justify-content-center align-items-center">
+    <div class="card py-4">
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="round-image"> <img src="https://i.imgur.com/Mn9kglf.jpg" class="rounded-circle" width="97"> </div>
+        </div>
+        <div class="text-center">
+            <h4 class="mt-3">Noora Smith</h4> <span>Account Manager</span>
+            <div class="px-5">
+                <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p> <button class="btn btn-primary follow">Follow Me</button>
+            </div>
+        </div>
+    </div>
+</div -->

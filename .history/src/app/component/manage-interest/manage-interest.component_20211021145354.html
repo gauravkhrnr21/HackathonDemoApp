@@ -1,0 +1,189 @@
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="container">
+            <div class="container">
+                <br>
+                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2" [ngStyle]="{'text-align': 'center'}"> Edit Interest</h3>
+                <!-- Form values: {{interestForm.value | json}}            -->
+            <form [formGroup]="interestForm"class="px-md-2" (ngSubmit)="onSubmitForm(interestForm)">
+              <div class="mb-4">
+                <div class="row">
+                  <b><label class="form-label" for="form3Example1q">SPORT/FITNESS</label></b>
+                </div>
+                <div class="form-group">
+                  <div class="form-check form-check-inline" *ngFor="let sport of sports; let i = index" >
+                    <input class="form-check-input" type="checkbox" [checked]="isChecked(sport.subCategoryId)" id="inlineCheckbox1"  (change)="onSportInterest(sport.categoryId,sport.subCategoryId, $event.target.checked)">
+                    <label class="form-check-label" for="inlineCheckbox1">{{sport.subCategoryName}}</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <div class="row">
+                  <b><label class="form-label" for="form3Example1q">FOOD</label></b>
+                </div>
+                <div class="form-group">
+                  <div class="form-check form-check-inline" *ngFor="let food of foods">
+                    <input class="form-check-input" type="checkbox" [checked]="isChecked(food.subCategoryId)" id="inlineCheckbox1" value="{{food.subCategoryId}}" (change)="onFoodInterest(food.categoryId,food.subCategoryId, $event.target.checked)">
+                    <label class="form-check-label" for="inlineCheckbox1">{{food.subCategoryName}}</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <div class="row">
+                  <b><label class="form-label" for="form3Example1q">CREATIVITY</label></b>
+                </div>
+                <div class="form-group">
+                  <div class="form-check form-check-inline" *ngFor="let creativity of creativities">
+                    <input class="form-check-input" type="checkbox" [checked]="isChecked(creativity.subCategoryId)" id="inlineCheckbox1" value="{{creativity.subCategoryId}}}" (change)="onCreativityInterest(creativity.categoryId,creativity.subCategoryId, $event.target.checked)">
+                    <label class="form-check-label" for="inlineCheckbox1">{{creativity.subCategoryName}}</label>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mb-4">
+                <div class="row">
+                  <b><label class="form-label" for="form3Example1q">TECHNOLOGY</label></b>
+                </div>
+                <div class="form-group">
+                  <div class="form-check form-check-inline" *ngFor="let technology of technologies">
+                    <input class="form-check-input" type="checkbox" [checked]="isChecked(technology.subCategoryId)" id="inlineCheckbox1" value="{{technology.subCategoryId}}" (change)="onTechnologyInterest(technology.categoryId,technology.subCategoryId, $event.target.checked)">
+                    <label class="form-check-label" for="inlineCheckbox1">{{technology.subCategoryName}}</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <div class="row">
+                  <b><label class="form-label" for="form3Example1q">STOCK UPDATES</label></b>
+                </div>
+                <div class="form-group">
+                  <div class="form-check form-check-inline" *ngFor="let stock of stocks">
+                    <input class="form-check-input" type="checkbox" [checked]="isChecked(stock.subCategoryId)" id="inlineCheckbox1" value="{{stock.subCategoryId}}" (change)="onStockInterest(stock.categoryId,stock.subCategoryId, $event.target.checked)">
+                    <label class="form-check-label" for="inlineCheckbox1">{{stock.subCategoryName}}</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <div class="row">
+                  <b><label class="form-label" for="form3Example1q">PARENTING</label></b>
+                </div>
+                <div class="form-group">
+                  <div class="form-check form-check-inline" *ngFor="let parenting of parentings">
+                    <input class="form-check-input" type="checkbox" [checked]="isChecked(parenting.subCategoryId)" id="inlineCheckbox1" value="{{parenting.subCategoryId}}" (change)="onParentingInterest(parenting.categoryId,parenting.subCategoryId, $event.target.checked)">
+                    <label class="form-check-label" for="inlineCheckbox1">{{parenting.subCategoryName}}</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <div class="row">
+                  <b><label class="form-label" for="form3Example1q">SHOPPING</label></b>
+                </div>
+                <div class="form-group">
+                  <div class="form-check form-check-inline" *ngFor="let shopping of shoppings">
+                    <input class="form-check-input" type="checkbox" [checked]="isChecked(shopping.subCategoryId)" id="inlineCheckbox1" value="{{shopping.subCategoryId}}" (change)="onShoppingInterest(shopping.categoryId,shopping.subCategoryId, $event.target.checked)">
+                    <label class="form-check-label" for="inlineCheckbox1">{{shopping.subCategoryName}}</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                <div class="col-md-6">
+                </div>
+              </div>
+        
+                <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                    <div class="col-md-9">
+                        <button type="submit" class="btn btn-primary btn-lg mb-1" style="background-color: #002e87;">Edit</button>
+                    </div>
+                </div>
+                </form>
+            </div>  
+         </div>   
+    </div>
+</div>            
+<div class="col-md-12 card">
+    <div class="comtainer" style="padding: 50px;">
+        <br>
+        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2" [ngStyle]="{'text-align': 'center'}"> Search Interest</h3>
+        <form [formGroup]="searchInterestForm" (ngSubmit)="onSubmit(searchInterestForm)">
+            <div class="form-row"> 
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="watch" value="" placeholder="Interest" formControlName="interest">
+                    <div
+                        *ngIf="!searchInterestForm.controls.interest?.valid && (searchInterestForm.controls.interest?.dirty
+                        ||searchInterestForm.controls.interest?.touched)" style="font-size:12px;color: red;">
+                        Interest is not valid
+                  </div>
+                </div>
+                
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" id="text" placeholder="Sub Interest" formControlName="subInterest">
+                    <div
+                        *ngIf="!searchInterestForm.controls.subInterest?.valid && (searchInterestForm.controls.subInterest?.dirty
+                        ||searchInterestForm.controls.subInterest?.touched)" style="font-size:12px;color: red;">
+                        Subinterest is not valid
+                  </div>
+                </div>
+                
+                <div class="form-group col-md-4">
+                    <button type="submit" class="btn btn-primary" style="background-color: #002e87;" [disabled]="!searchInterestForm.valid"><i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i>Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container">  
+        <div class="d-flex flex-row-reverse bd-highlight mb-2">
+            <div class="p-2 bd-highlight">
+                <select (change)="onTableSizeChange($event)" class="custom-select">
+                <option *ngFor="let size of tableSizes" [ngValue]="size">
+                    {{ size }}
+                </option>
+                </select>
+            </div>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Address</th>
+                <th>Interest</th>
+                <th>Sub Interest</th>
+                <th>Contact</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let post of POSTS | paginate : {
+                        itemsPerPage: tableSize,
+                        currentPage: page,
+                        totalItems: count
+                        };
+                let i = index" [class.active]="i == currentIndex">
+                <td scope="row">{{post.name}}</td>
+                <td>{{post.department}}</td>
+                <td>{{post.location}}</td>
+                <td>{{post.interest}}</td>
+                <td>{{post.subinterest}}</td>
+                <td>{{post.contact}}</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="d-flex justify-content-center">
+            <pagination-controls 
+                responsive="true" 
+                previousLabel="Prev" 
+                nextLabel="Next" 
+                (pageChange)="onTableDataChange($event)">
+            </pagination-controls>
+        </div>
+    </div> 
+</div>
+   
+ 

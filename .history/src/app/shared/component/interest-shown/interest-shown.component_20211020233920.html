@@ -1,0 +1,110 @@
+<section class="h-100 h-custom" style="background-color: #002e87;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Interests</h3>
+            Form values: {{interestForm.value | json}}           
+            <form [formGroup]="interestForm"class="px-md-2" (ngSubmit)="onSubmit(interestForm)">
+              <div class="mb-4">
+                <div class="row">
+                  <b><label class="form-label" for="form3Example1q">SPORT/FITNESS</label></b>
+                </div>
+                <div class="form-group">
+                  <div class="form-check form-check-inline" *ngFor="let sport of sports; let i = index" >
+                    <input class="form-check-input" type="checkbox" checked ="sport.subCategoryId === '2'" value="interestForm.controls.sport.includes(sport.subCategoryId) " id="inlineCheckbox1"  (change)="onSportInterest(sport.categoryId,sport.subCategoryId, $event.target.checked)">
+                    <label class="form-check-label" for="inlineCheckbox1">{{sport.subCategoryName}}</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <div class="row">
+                  <b><label class="form-label" for="form3Example1q">FOOD</label></b>
+                </div>
+                <div class="form-group">
+                  <div class="form-check form-check-inline" *ngFor="let food of foods">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="{{food.subCategoryId}}" (change)="onFoodInterest(sport.categoryId,food.subCategoryId, $event.target.checked)">
+                    <label class="form-check-label" for="inlineCheckbox1">{{food.subCategoryName}}</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <div class="row">
+                  <b><label class="form-label" for="form3Example1q">CREATIVITY</label></b>
+                </div>
+                <div class="form-group">
+                  <div class="form-check form-check-inline" *ngFor="let creativity of creativities">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="{{creativity.subCategoryId}}}" (change)="onCreativityInterest(sport.categoryId,creativity.subCategoryId, $event.target.checked)">
+                    <label class="form-check-label" for="inlineCheckbox1">{{creativity.subCategoryName}}</label>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mb-4">
+                <div class="row">
+                  <b><label class="form-label" for="form3Example1q">TECHNOLOGY</label></b>
+                </div>
+                <div class="form-group">
+                  <div class="form-check form-check-inline" *ngFor="let technology of technologies">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="{{technology.subCategoryId}}" (change)="onTechnologyInterest(sport.categoryId,technology.subCategoryId, $event.target.checked)">
+                    <label class="form-check-label" for="inlineCheckbox1">{{technology.subCategoryName}}</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <div class="row">
+                  <b><label class="form-label" for="form3Example1q">STOCK UPDATES</label></b>
+                </div>
+                <div class="form-group">
+                  <div class="form-check form-check-inline" *ngFor="let stock of stocks">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="{{stock.subCategoryId}}" (change)="onStockInterest(sport.categoryId,stock.subCategoryId, $event.target.checked)">
+                    <label class="form-check-label" for="inlineCheckbox1">{{stock.subCategoryName}}</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <div class="row">
+                  <b><label class="form-label" for="form3Example1q">PARENTING</label></b>
+                </div>
+                <div class="form-group">
+                  <div class="form-check form-check-inline" *ngFor="let parenting of parentings">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="{{parenting.subCategoryId}}" (change)="onParentingInterest(sport.categoryId,parenting.subCategoryId, $event.target.checked)">
+                    <label class="form-check-label" for="inlineCheckbox1">{{parenting.subCategoryName}}</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <div class="row">
+                  <b><label class="form-label" for="form3Example1q">SHOPPING</label></b>
+                </div>
+                <div class="form-group">
+                  <div class="form-check form-check-inline" *ngFor="let shopping of shoppings">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="{{shopping.subCategoryId}}" (change)="onShoppingInterest(sport.categoryId,shopping.subCategoryId, $event.target.checked)">
+                    <label class="form-check-label" for="inlineCheckbox1">{{shopping.subCategoryName}}</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                <div class="col-md-6">
+                </div>
+              </div>
+              <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                <div class="col-md-9">
+                  <button type="submit" class="btn btn-success btn-lg mb-1" style="color: white; background-color: #002e87;">SAVE</button>
+                </div>
+                <div class="col-md-3">
+                  <b><a href="javascript:void(0);" (click)="skip();">SKIP PAGE</a></b>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,75 @@
+<!-- <div class="body"></div>
+<div class="grad"></div>
+<div class="header">
+    <div>Good<span>Times</span></div>
+</div>
+<br>
+<div class="login">
+    <form [formGroup]="loginForm">
+        <input type="text" placeholder="username" formControlName="username">
+        <br>
+        <input type="password" placeholder="password" formControlName="password">
+        <br>
+        <input type="button" value="Login" (click)="onSubmit(loginForm)" >
+    </form>
+</div> -->
+
+<body style="background-color: #3b5998;">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div class="card border-0 shadow rounded-3 my-5">
+            <div class="card-body p-4 p-sm-5">
+              <h5 class="card-title text-center mb-5 fw-light fs-5">Sign In</h5>
+              <div style="font-size:12px;color: red;">
+                {{warnmsg}}
+              </div>
+              <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+                <div class="form-check form-check-inline mb-3">
+                  <label class="form-check-label" for="email">Eamil</label>
+                  <input type="email" class="form-control" id="floatingInput" placeholder="email" formControlName="email">
+                    <div
+                      *ngIf="!loginForm.controls.email?.valid && (loginForm.controls.email?.dirty
+                      ||loginForm.controls.email?.touched)" style="font-size:12px;color: red;">
+                        Email is not valid
+                    </div>
+                   
+                </div>
+                
+                <div class="form-check form-check-inline mb-3">
+                  <button class="btn btn-outline-dark" href="" role="button" style="text-transform:none">
+                    <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                    Login with Google
+                  </button>
+                </div>
+                <!-- <div class="form-check form-check-inline mb-3">
+                  <label class="form-check-label" for="Password">Password</label>
+                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password">
+                  <div
+                    *ngIf="!loginForm.controls.password?.valid && (loginForm.controls.password?.dirty
+                    ||loginForm.controls.password?.touched)" style="font-size:12px;color: red;">
+                      Password is not valid
+                  </div>
+                </div> -->
+  
+                <!-- <div class="form-check form-check-inline mb-3">
+                  <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
+                  <label class="form-check-label" for="rememberPasswordCheck">
+                    Remember password
+                  </label>
+                </div> -->
+                <!-- <div class="row">
+                  
+                </div> -->
+                 <!-- <div class="row">
+                    <div class="col-md-12"> 
+                      <button type="submit" class="btn btn-lg btn-google btn-block text-uppercase btn-outline" href="" style="color:cornsilk"><img src="https://img.icons8.com/color/16/000000/google-logo.png"> Signup Using Google</button> </div>
+                    </div> <br> -->
+                <hr class="my-4">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>

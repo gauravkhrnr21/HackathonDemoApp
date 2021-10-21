@@ -1,0 +1,87 @@
+
+  <div class="col-md-12 card">
+    <!-- <app-barchart></app-barchart> -->
+    <app-horrizontal-bar-chart></app-horrizontal-bar-chart>
+  </div>
+  <div class="col-md-12 card">
+    <div class="comtainer" style="padding: 50px;">
+        <br>
+        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2" [ngStyle]="{'text-align': 'center'}"> Search Interest</h3>
+        <form [formGroup]="searchInterestForm" (ngSubmit)="onSubmit(searchInterestForm)">
+            <div class="form-row"> 
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="watch" value="" placeholder="Interest" formControlName="interest">
+                    <div
+                        *ngIf="!searchInterestForm.controls.interest?.valid && (searchInterestForm.controls.interest?.dirty
+                        ||searchInterestForm.controls.interest?.touched)" style="font-size:12px;color: red;">
+                        Interest is not valid
+                  </div>
+                </div>
+                
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" id="text" placeholder="Sub Interest" formControlName="subInterest">
+                    <div
+                        *ngIf="!searchInterestForm.controls.subInterest?.valid && (searchInterestForm.controls.subInterest?.dirty
+                        ||searchInterestForm.controls.subInterest?.touched)" style="font-size:12px;color: red;">
+                        Subinterest is not valid
+                  </div>
+                </div>
+                
+                <div class="form-group col-md-4">
+                    <button type="submit" class="btn btn-primary" style="background-color: #002e87;" [disabled]="!searchInterestForm.valid"><i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i>Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container">  
+        <div class="d-flex flex-row-reverse bd-highlight mb-2">
+            <div class="p-2 bd-highlight">
+                <select (change)="onTableSizeChange($event)" class="custom-select">
+                <option *ngFor="let size of tableSizes" [ngValue]="size">
+                    {{ size }}
+                </option>
+                </select>
+            </div>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Address</th>
+                <th>Interest</th>
+                <th>Sub Interest</th>
+                <th>Contact</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let post of POSTS | paginate : {
+                        itemsPerPage: tableSize,
+                        currentPage: page,
+                        totalItems: count
+                        };
+                let i = index" [class.active]="i == currentIndex">
+                <td scope="row">{{post.name}}</td>
+                <td>{{post.department}}</td>
+                <td>{{post.location}}</td>
+                <td>{{post.interest}}</td>
+                <td>{{post.subinterest}}</td>
+                <td>{{post.contact}}</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="d-flex justify-content-center">
+            <pagination-controls 
+                responsive="true" 
+                previousLabel="Prev" 
+                nextLabel="Next" 
+                (pageChange)="onTableDataChange($event)">
+            </pagination-controls>
+        </div>
+    </div> 
+</div>
+
+
+  
